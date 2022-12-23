@@ -26,7 +26,7 @@ class ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         title: Text(
           'UnilaApp',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline2,
         ),
         actions: [
           IconButton(

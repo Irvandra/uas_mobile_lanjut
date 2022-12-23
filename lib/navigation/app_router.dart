@@ -5,6 +5,7 @@ import '../models/mata_kuliah_manager.dart';
 import '../models/profile_manager.dart';
 import '../screens/home.dart';
 import '../screens/login_screen.dart';
+import '../screens/mata_kuliah_item_screen.dart';
 import '../screens/profile_screen.dart';
 
 class AppRouter {
@@ -32,6 +33,23 @@ class AppRouter {
           return Home(key: state.pageKey, currentTab: tab);
         },
         routes: [
+          GoRoute(
+            name: 'item',
+            path: 'item/:id',
+            builder: (context, state) {
+              final itemId = state.params['id'] ?? '';
+              final item = mataKuliahManager.getMataKuliahItem(itemId);
+              return MataKuliahItemScreen(
+                originalItem: item,
+                onCreate: (item) {
+                  mataKuliahManager.addItem(item);
+                },
+                onUpdate: (item) {
+                  mataKuliahManager.updateItem(item);
+                },
+              );
+            },
+          ),
           GoRoute(
             name: 'profile',
             path: 'profile',

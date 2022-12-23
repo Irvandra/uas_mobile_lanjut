@@ -54,7 +54,7 @@ class HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           'UnilaApp',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline2,
         ),
         actions: [
           profileButton(widget.currentTab),
@@ -79,11 +79,11 @@ class HomeState extends State<Home> {
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
+            icon: Icon(Icons.school_sharp),
             label: 'Lembaga',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.grading),
             label: 'Mata Kuliah',
           ),
         ],

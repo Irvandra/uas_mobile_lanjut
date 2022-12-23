@@ -19,12 +19,12 @@ class UnilaTheme {
       color: Colors.black,
     ),
     headline3: GoogleFonts.lato(
-      fontSize: 16.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
     headline6: GoogleFonts.lato(
-      fontSize: 20.0,
+      fontSize: 15.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
@@ -47,12 +47,12 @@ class UnilaTheme {
       color: Colors.white,
     ),
     headline3: GoogleFonts.lato(
-      fontSize: 16.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     headline6: GoogleFonts.lato(
-      fontSize: 20.0,
+      fontSize: 15.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),

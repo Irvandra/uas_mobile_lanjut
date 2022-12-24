@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DashboardLembagaListView extends StatelessWidget {
   final List<String> namaLembaga = const <String>['Fakultas', 'Jurusan', 'Prodi'];
   final List<String> jumlahLembaga = const <String>['8', '50', '100'];
-  final List warnaLembaga = const [Colors.red, Colors.green, Colors.blue];
+  final List warnaLembaga = const [Colors.blue, Colors.lightBlue, Colors.lightBlueAccent];
 
   DashboardLembagaListView({
     super.key
@@ -26,6 +26,7 @@ class DashboardLembagaListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     namaLembaga[index],

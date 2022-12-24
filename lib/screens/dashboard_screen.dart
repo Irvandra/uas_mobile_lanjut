@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uas_mobile_lanjut/components/dashboard_lembaga_list_view.dart';
+import 'package:uas_mobile_lanjut/models/profile_manager.dart';
 
 import '../api/get_api.dart';
 import '../models/dashboard_data.dart';
@@ -18,6 +19,13 @@ class DashboardScreen extends StatelessWidget {
           return ListView(
             scrollDirection: Axis.vertical,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0, right: 10.0, left: 10.0),
+                child: Text(
+                  "Hello, " + ProfileManager().getUser.name,
+                  style: Theme.of(context).textTheme.headline3,
+                ),
+              ),
               DashboardLembagaListView(),
               DashboardMataKuliahListView(mataKuliah: snapshot.data?.mataKuliah ?? [])
             ],

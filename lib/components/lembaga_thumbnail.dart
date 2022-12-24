@@ -12,18 +12,26 @@ class LembagaThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10),
-          Text(
-            lembaga.nm_prodi,
-            maxLines: 1,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-        ],
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 1,
+              child: Image.asset('assets/fakultas.png'),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              flex: 4,
+              child: Text(
+                lembaga.nm_jns_sms.toUpperCase() + " " + lembaga.nm_lemb,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

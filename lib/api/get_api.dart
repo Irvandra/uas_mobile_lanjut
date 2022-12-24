@@ -30,13 +30,15 @@ class GetApi {
 
   Future<List<Lembaga>> getLembaga() async {
     dio.options.headers['Authorization'] = await getToken();
-    var response = await dio.get('http://onedata.unila.ac.id/api/live/0.1/lembaga/profil_prodi/daftar?page=1&limit=25&sort_by=DESC');
+    var response = await dio.get('http://onedata.unila.ac.id/api/live/0.1/lembaga/daftar_lembaga');
     if (response.statusCode == 200) {
       final Map<String, dynamic> json = jsonDecode(response.toString());
       if (json['data'] != null) {
         final lembaga = <Lembaga>[];
         json['data'].forEach((v) {
-          lembaga.add(Lembaga.fromJson(v));
+          if (v['id_jns_sms'] == '1') {
+            lembaga.add(Lembaga.fromJson(v));
+          }
         });
         return lembaga;
       } else {

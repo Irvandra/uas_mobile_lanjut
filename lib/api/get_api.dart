@@ -7,8 +7,8 @@ import '../models/mata_kuliah.dart';
 class GetApi {
   static final dio = Dio();
 
-  Future<DashboardData> getDashboardData() async {
-    final todayRecipes = await getMataKuliah();
+  Future<DashboardData> getDashboardData(int page) async {
+    final todayRecipes = await getMataKuliah(page);
 
     return DashboardData(todayRecipes);
   }
@@ -49,9 +49,9 @@ class GetApi {
     }
   }
 
-  Future<List<MataKuliah>> getMataKuliah() async {
+  Future<List<MataKuliah>> getMataKuliah(int page) async {
     dio.options.headers['Authorization'] = await getToken();
-    var response = await dio.get('http://onedata.unila.ac.id/api/live/0.1/mata_kuliah/list_matkul?page=1&limit=50&id_prodi=54BBD27B-2376-4CAE-9951-76EF54BD2CA2');
+    var response = await dio.get('http://onedata.unila.ac.id/api/live/0.1/mata_kuliah/list_matkul?page=$page&limit=50&id_prodi=54BBD27B-2376-4CAE-9951-76EF54BD2CA2');
     if (response.statusCode == 200) {
       final Map<String, dynamic> json = jsonDecode(response.toString());
       if (json['data'] != null) {

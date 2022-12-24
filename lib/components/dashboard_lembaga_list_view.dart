@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class DashboardLembagaListView extends StatelessWidget {
   final List<String> namaLembaga = const <String>['Fakultas', 'Jurusan', 'Prodi'];
-  final List<String> jumlahLembaga = const <String>['8', '50', '100'];
-  final List warnaLembaga = const [Colors.blue, Colors.lightBlue, Colors.lightBlueAccent];
+  final List<String> jumlahLembaga = const <String>['10', '38', '150'];
+  final List warnaLembaga = const [Color(0xff48cae4), Color(0xff00b4d8), Color(0xff0096c7)];
 
   DashboardLembagaListView({
     super.key
@@ -12,11 +12,7 @@ class DashboardLembagaListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 8.0,
-        right: 8.0,
-        left: 8.0,
-      ),
+      padding: const EdgeInsets.all(8.0),
       child: GridView.builder(
         shrinkWrap: true,
         itemCount: 3,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import '../models/app_state_manager.dart';
 
 class EmptyMataKuliahScreen extends StatelessWidget {
   const EmptyMataKuliahScreen({super.key});

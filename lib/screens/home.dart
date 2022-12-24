@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/app_state_manager.dart';
 import 'dashboard_screen.dart';
 import 'lembaga_screen.dart';
 import 'mata_kuliah_screen.dart';
@@ -24,10 +22,9 @@ class HomeState extends State<Home> {
   int _selectedIndex = 0;
   static const String prefSelectedIndexKey = 'selectedIndex';
   static List<Widget> pages = <Widget>[
-    DashboardScreen(),
+    const DashboardScreen(),
     LembagaScreen(),
-    MataKuliahScreen(),
-    // const MataKuliahScreen(),
+    const MataKuliahScreen(),
   ];
 
   @override

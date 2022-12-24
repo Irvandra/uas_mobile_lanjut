@@ -1,10 +1,17 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import '../models/dashboard_data.dart';
 import '../models/lembaga.dart';
 import '../models/mata_kuliah.dart';
 
 class GetApi {
   static final dio = Dio();
+
+  Future<DashboardData> getDashboardData() async {
+    final todayRecipes = await getMataKuliah();
+
+    return DashboardData(todayRecipes);
+  }
 
   Future<String> getToken() async {
     var formData = FormData.fromMap({

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../models/mata_kuliah.dart';
 
-class DashboardMataKuliahThumbnail extends StatelessWidget {
+class DashboardLembagaThumbnail extends StatelessWidget {
   final MataKuliah mataKuliah;
 
-  const DashboardMataKuliahThumbnail({
+  const DashboardLembagaThumbnail({
     super.key,
     required this.mataKuliah,
   });

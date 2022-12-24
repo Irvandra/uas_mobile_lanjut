@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import '../models/lembaga.dart';
+import '../models/mata_kuliah.dart';
 
 class GetApi {
   static final dio = Dio();
@@ -36,6 +37,25 @@ class GetApi {
       }
     } else {
       throw Exception('Failed to load lembaga');
+    }
+  }
+
+  Future<List<MataKuliah>> getMataKuliah() async {
+    dio.options.headers['Authorization'] = await getToken();
+    var response = await dio.get('http://onedata.unila.ac.id/api/live/0.1/mata_kuliah/list_matkul?page=1&limit=50&id_prodi=54BBD27B-2376-4CAE-9951-76EF54BD2CA2');
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> json = jsonDecode(response.toString());
+      if (json['data'] != null) {
+        final mataKuliah = <MataKuliah>[];
+        json['data'].forEach((v) {
+          mataKuliah.add(MataKuliah.fromJson(v));
+        });
+        return mataKuliah;
+      } else {
+        return [];
+      }
+    } else {
+      throw Exception('Failed to load mata kuliah');
     }
   }
 }

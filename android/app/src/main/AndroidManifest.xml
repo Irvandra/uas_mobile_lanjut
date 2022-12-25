@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.uas_mobile_lanjut">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="uas_mobile_lanjut"
+        android:label="UnilaApp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

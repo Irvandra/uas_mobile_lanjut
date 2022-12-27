@@ -22,7 +22,7 @@ class GetApi {
     var response = await dio.post('http://onedata.unila.ac.id/api/live/0.1/auth/login', data: formData);
     if (response.statusCode == 200) {
       final Map<String, dynamic> json = jsonDecode(response.toString());
-      return json['data']['type'] + json['data']['token'];
+      return json['data']['token_bearer'];
     } else {
       throw Exception('Failed to load token');
     }
